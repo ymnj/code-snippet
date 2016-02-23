@@ -1,0 +1,16 @@
+<h1>Main page. HERE MAH SNIPPETS</h1>
+
+
+
+
+<% @snippets.each do |snippet| %>
+  Title: <%= snippet.title %>
+  <div>
+    <%= snippet.body %>
+  </div>
+  <%= link_to "Edit", edit_snippet_path(snippet) %>
+  <%= link_to "Delete", snippet_path(snippet), method: :delete, data: {confirm: "Are you sure?"} %>
+
+
+  <hr>
+<% end %>

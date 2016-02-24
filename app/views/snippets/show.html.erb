@@ -1,0 +1,10 @@
+<h1>Single Snippet</h1>
+
+Title: <%= @snippet.title %>
+
+<div>
+  <%= markdown(@snippet.body) %>
+</div>
+
+<%= link_to "Edit", edit_snippet_path(@snippet) %>
+<%= link_to "Delete", snippet_path(@snippet), method: :delete, data: {confirm: "Are you sure?"} %>

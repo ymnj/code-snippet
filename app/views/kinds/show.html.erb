@@ -1,0 +1,9 @@
+<h1>Single Kind</h1>
+
+<% @snippets.each do |snippet| %>
+  <%= snippet.title %>
+  <div>
+    <%= markdown(snippet.body) %>
+  </div>
+<% end %>
+

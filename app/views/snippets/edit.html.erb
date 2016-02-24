@@ -1,0 +1,19 @@
+<h1>Edit snippet</h1>
+
+<% @snippet.errors.full_messages %>
+
+<%= form_for @snippet do |f| %>
+  <div>
+    <%= f.label :kind_id %>
+    <%= f.collection_select(:kind_id, Kind.order(:name), :id, :name) %>
+  </div>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>  
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body, size: "80x5" %>
+  </div>
+  <%= f.submit %>
+<% end %>

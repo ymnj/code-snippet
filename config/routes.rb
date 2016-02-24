@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root 'snippets#index'
 
   resources :snippets
+  resources :kinds
+ 
+
   resources :users, only: [:new, :create, :destroy]
 
   get '/signup' => 'sessions#new'

@@ -1,16 +1,24 @@
 <h1>Main page. HERE MAH SNIPPETS</h1>
 
 
+<div id="kind-nav">
+  <% @kinds.each do |kind|%>
+    <li>
+      <%= link_to kind.name, kind_path(kind) %>
+    </li>
+  <% end %>
+</div>
 
 
 <% @snippets.each do |snippet| %>
-  Title: <%= snippet.title %>
+
+  Title: <%= link_to snippet.title, snippet_path(snippet) %>
+  
   <div>
     <%= snippet.body %>
   </div>
-  <%= link_to "Edit", edit_snippet_path(snippet) %>
-  <%= link_to "Delete", snippet_path(snippet), method: :delete, data: {confirm: "Are you sure?"} %>
 
 
   <hr>
 <% end %>
+

@@ -10,12 +10,13 @@
 </div>
 
 
+
 <% @snippets.each do |snippet| %>
 
   Title: <%= link_to snippet.title, snippet_path(snippet) %>
   
   <div>
-    <%= snippet.body %>
+    <%= markdown(snippet.body) %>
   </div>
 
 
